@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Canciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 8, 5, 0.8);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+            position: fixed;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar img.logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 0.6em;
+            border: 2px solid #1BFD9C;
+            background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #82ffc9;
+            box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+        }
+
+        .container {
+            margin-left: 270px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #1BFD9C;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1BFD9C;
+            width: 100%;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #1BFD9C;
+            border-radius: 4px;
+            color: #333;
+            width: calc(100% - 22px);
+        }
+
+        button {
+            font-size: 15px;
+            padding: 0.7em 2.7em;
+            border-radius: 0.6em;
+            cursor: pointer;
+            margin-top: 20px;
+            border: none;
+        }
+
+        .guardar {
+            background-color: black;
+            color: white;
+        }
+
+        .cancelar {
+            background-color: #800000; 
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>
+            <img src="mifotoparalapagina.jpg" alt="Mi mini foto piola" class="profile" /> 
+            Mariano Origgi
+        </h2>
+        <img src="rhcplogo.jpg" alt="Fotito de la banda" class="logo">
+        <div><a href="otrosalbums.html">Otros álbumes</a></div>
+        <div><a href="addalbum.html">Volver al inicio</a></div>
+        <div><a href="fechasgira.html">Fechas de gira</a></div> 
+        <div><a href="#logout">Ingresar</a></div>
+    </div>
+
+    <div class="container">
+        <h1>Agregar Canción</h1>
+        <form action="/addSong" method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            
+            <label for="duracion">Duración:</label>
+            <input type="text" id="duracion" name="duracion" required>
+            
+            <label for="link">Link a la Canción en YouTube:</label>
+            <input type="text" id="link" name="link" required>
+            
+            <button type="submit" class="guardar">Guardar</button>
+            <button type="button" class="cancelar" onclick="window.location='otrosalbums.html'">Cancelar</button>
+        </form>
+    </div>
+</body>
+</html>

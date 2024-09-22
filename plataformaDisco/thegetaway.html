@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Getaway</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 8, 5, 0.8);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+            position: fixed;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar img.logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 0.6em;
+            border: 2px solid #1BFD9C;
+            background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #82ffc9;
+            box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+        }
+
+        .container {
+            padding-left: 270px;
+            padding-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #1BFD9C;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .track-list {
+            width: 100%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .track {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+            
+        .track span {
+            color: black; 
+            font-weight: bold; 
+        }
+
+        .track:last-child {
+            border-bottom: none;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        .duration {
+            min-width: 50px; 
+            text-align: right; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>
+            <img src="mifotoparalapagina.jpg" alt="Mi mini foto piola" class="profile" /> 
+            Mariano Origgi
+        </h2>
+        <img src="rhcplogo.jpg" alt="Fotito de la banda" class="logo">
+        <div><a href="index.html">Volver al inicio</a></div>
+        <div><a href="#edit-album">Fechas de gira</a></div>
+        <div><a href="#add-songs">Agregar canciones</a></div>
+        <div><a href="#logout">Ingresar</a></div>
+    </div>
+
+    <div class="container">
+        <h1>The Getaway</h1>
+        <div class="description">
+            <p>Fecha de estreno: 23 de junio de 2016</p>
+            <p>Características musicales: Un álbum que fusiona rock alternativo con elementos de funk y jazz.</p>
+        </div>
+
+        <div class="track-list">
+            <div class="track">
+                <span>1. Go Robot</span>
+                <span class="duration">3:56</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example1', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>2. A Moment Apart</span>
+                <span class="duration">4:16</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example2', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>3. Go Robot</span>
+                <span class="duration">3:59</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example3', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>4. Sick Love</span>
+                <span class="duration">3:20</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example4', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>5. Go Robot</span>
+                <span class="duration">3:41</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example5', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>6. Dreams of a Fisherman</span>
+                <span class="duration">4:09</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example6', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>7. Getaway</span>
+                <span class="duration">3:35</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example7', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>8. Dusk Till Dawn</span>
+                <span class="duration">3:42</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example8', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>9. Go Robot</span>
+                <span class="duration">3:49</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example9', '_blank')">▶️</button>
+                </div>
+            </div>
+            <div class="track">
+                <span>10. The Hunter</span>
+                <span class="duration">4:20</span>
+                <div class="buttons">
+                    <button onclick="eliminarCancion(this)">🗑️</button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=example10', '_blank')">▶️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function eliminarCancion(button) {
+            const track = button.parentElement.parentElement;
+            track.remove();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
